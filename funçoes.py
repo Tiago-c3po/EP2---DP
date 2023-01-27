@@ -16,3 +16,15 @@ def preenche_frota(frota, nome, linha, coluna, orientacao, tamanho):
     else:
         frota[nome].append(posicoes)
     return frota
+
+def faz_jogada(tabuleiro, linha, coluna):
+    for i in range(len(tabuleiro)):
+        if i == linha:
+            for j in range(len(tabuleiro[i])):
+                if j == coluna:
+                    if tabuleiro[i][j] == 1:
+                        tabuleiro[i][j] = 'X'
+                    elif tabuleiro[i][j] == 0:
+                        tabuleiro[i][j] = '-'
+                
+    return tabuleiro
