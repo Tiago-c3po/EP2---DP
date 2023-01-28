@@ -28,3 +28,27 @@ def faz_jogada(tabuleiro, linha, coluna):
                         tabuleiro[i][j] = '-'
                 
     return tabuleiro
+
+def posiciona_frota(frota):
+    lista = [
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+]
+
+    for posicao in frota.values():
+        for quant in posicao:
+            for info in quant:
+                for i in range(len(lista)):
+                    if i == info[0]:
+                        for j in range(len(lista[i])):
+                            if j == info[1]:
+                                lista[i][j] = 1
+    return lista
