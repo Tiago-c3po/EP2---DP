@@ -52,3 +52,19 @@ def posiciona_frota(frota):
                             if j == info[1]:
                                 lista[i][j] = 1
     return lista
+def afundados(frota, tabuleiro):
+    cont = 0
+    afundados = 0
+    for posicao in frota.values():
+        for quant in posicao:
+            cont = 0 
+            for info in quant:
+                for i in range(len(tabuleiro)):
+                    if i == info[0]:
+                        for j in range(len(tabuleiro[i])):
+                            if j == info[1]:
+                                if tabuleiro[i][j] == 'X':
+                                    cont += 1
+            if len(quant) == cont:
+                afundados += 1
+    return afundados
